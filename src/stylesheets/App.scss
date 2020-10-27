@@ -1,0 +1,54 @@
+@import './commons/vars';
+@import './commons/reset';
+
+html{
+  background-image: url('../assets/backMarket.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page{
+  height: 100vh;
+  background-color: $color-dark;
+  opacity: 99%;
+}
+
+.navBar {
+  background-color: $color-medium;
+  width: 25%;
+  height: 100vh;
+  
+  &__header{
+    color: $color-ligth;
+    background-color:$color-market;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    &--img{
+      width: 24px;
+      height: 24px;
+      align-self: center;
+      margin-right: 2px;  
+    }
+    &--change{
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+    &--box{
+      margin-left: 8px;
+      align-self: flex-start;
+      padding-right: 70px;
+     &--title{
+       font-size: 18px;
+     }
+     &--text{
+       font-size: 16px;
+     }
+    }
+    
+  }
+}
+
+
+
