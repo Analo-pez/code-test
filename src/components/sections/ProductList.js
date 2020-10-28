@@ -1,21 +1,21 @@
 import React from 'react';
 import Collapsible from './Collapsible';
-import Product from './Product';
 import '../../stylesheets/styleComponents/ProductList.scss'
 
 
 
-const ProductList = () => {
+const ProductList = (props) => {
 
 
     return (
-        <div>
-            <Collapsible>
-                <Product />
-            </Collapsible>
-            <Collapsible>
-                <Product />
-            </Collapsible>
+        <div className="productList">
+            <Collapsible
+                title="Frutas y verduras"
+            // iconCategory="../../assets/ic_checked.svg" 
+            />
+            <Collapsible title="Carne" />
+            <Collapsible title="Pescado" />
+            <Collapsible title="Hogar" />
         </div>
     );
 }

@@ -18,13 +18,22 @@ html{
   background-color: $color-medium;
   width: 25%;
   height: 100vh;
+  padding-top: 60px;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 999;
   
   &__header{
+    width: 25%;
     color: $color-ligth;
     background-color:$color-market;
     padding: 12px;
     display: flex;
     align-items: center;
+    position: fixed;
+    z-index: 998;
+    left: 0;
+    top: 0;
     &--img{
       width: 24px;
       height: 24px;
