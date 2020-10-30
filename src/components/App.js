@@ -1,7 +1,19 @@
 import React, { useState, useEffect } from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useParams,
+  NavLink
+} from "react-router-dom";
 import '../stylesheets/App.scss';
 import NavBar from '../components/sections/NavBar'
 import imgSuper from '../assets/ic_circled_super.png';
+import Shop from './sections/Shop';
+import Collapsible from './sections/Collapsible';
+import Product from './sections/Product';
+import Landing from './Landing';
 
 
 function App() {
@@ -31,15 +43,18 @@ function App() {
   //   return <div>Loading...</div>;
   // } else {
 
-
   return (
-    <div >
-      <NavBar
-        logoMarket={imgSuper}
-        name="Mercadona"
-        postalcode="28010"
-      />
-    </div>
+    <Router>
+      <div >
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/tienda" component={Shop} />
+          <Route exact path="/tienda/market" component={NavBar} />
+          <Route exact path="/tienda/market/category" component={NavBar} />
+          <Route exact path="/tienda/market/category/subcategory" component={NavBar} />
+        </Switch>
+      </div>
+    </Router>
   );
 }
 // }

@@ -3,10 +3,7 @@ import Collapsible from './Collapsible';
 import '../../stylesheets/styleComponents/ProductList.scss'
 
 
-
 const ProductList = (props) => {
-
-
     return (
         <div className="productList">
             <Collapsible

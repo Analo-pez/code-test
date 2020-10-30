@@ -3,7 +3,7 @@ import '../../stylesheets/styleComponents/Collapsible.scss'
 import hide from '../../assets/ic_hide.svg';
 import stick from '../../assets/ic_checked.svg';
 import Product from './Product';
-
+import { Link } from "react-router-dom";
 
 
 const Collapsible = (props) => {
@@ -15,8 +15,7 @@ const Collapsible = (props) => {
                 onClick={() => setOpen(!isOpen)}>
                 {/* <img src={props.iconCategory} alt={props.title} /> */}
                 <i className="far fa-star collapsible__icon"></i>
-                <div className="collapsible__box"
-                >
+                <Link to="/tienda/market/category" className="collapsible__box">
                     <h2 className="collapsible__box--title">
                         {props.title}
                     </h2>
@@ -25,7 +24,7 @@ const Collapsible = (props) => {
                         src={hide}
                         alt="collapsible"
                     ></img>
-                </div>
+                </Link>
             </div>
             <div id="upperElement" className={`accordion-item ${!isOpen ? "collapsed" : ""}`} >
                 <ul className="container">
