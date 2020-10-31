@@ -6,14 +6,14 @@ import '../stylesheets/styleComponents/Landing.scss';
 function Landing() {
     return (
         <div className="pageLanding">
-            <header>
-                <h1 className="title__principal ">LolaMarket</h1>
+            <header className="headerLanding">
+                <h1 className="headerLanding__title ">LolaMarket</h1>
             </header>
             <main className="sectionPrincipal">
                 <section className="sectionPrincipal__box">
                     <h2 className="sectionPrincipal__box--title"> Hacemos tu compra</h2>
                     <p className="sectionPrincipal__box--subtitle"> El nuevo servicio para hacer la compra en tus supermercados de confianza </p>
-                    <input placeholder="Tu código postal"></input>
+                    <input className="sectionPrincipal__box--input" placeholder="Tu código postal" />
                     <Link to="/tienda" className="box-button">
                         <button className="start-button">Buscar tienda</button>
                     </Link >
