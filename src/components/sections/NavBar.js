@@ -1,6 +1,6 @@
 import React from 'react'
 import ProductList from './ProductList';
-
+// import { getDataFromApi } from '../../services/Api'
 
 const NavBar = (props) => {
     return (

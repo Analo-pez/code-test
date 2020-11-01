@@ -1,37 +1,68 @@
 
-//LLAMADA PARA OBTENER TOKEN VALIDO
-export const getDataFromApi = () => {
-    return fetch(
-        'https://api.comprea.com/v7/user/session',
-    ).then((resp) => {
-        return resp.json();
-    });
-}
+
+// const URL = 'https://api.comprea.com/v7/';
+// const postalcode = "28010"
+// const companyID = "1"
+// const categoryID = "99673"
 
 
-//LLAMADA PARA ACCEDER A CODIGO POSTAL
-export const getApiPostalcode = async (token, postalcode) => {
-    return fetch(`https://api.comprea.com/v7/user/${postalcode}`
-        , {
-            method: 'GET',
-            mode: 'cors',
-            headers: {
-                Authorization: `Bearer ${token}`,
-            },
-        }
-    ).then((response) => {
-        console.log(response)
-        return response.json()
-    }
-    )
-    //LO COMENTO PARA PODER TERMINAR LA LLAMADA EN APP CON HOOK USEEFFECT
-    // .then(data => {
-    //     console.log(data)
-    //     return data
-    // }
-    // )
+// const getDataFromApi = async () => {
+//     try {
+//         const firstPromise = await fetch(`${URL}user/session`)
+//         const result = await firstPromise.json()
 
-}
+//         const newPromise = await fetch(`${URL}user/postalcode?token=${result.token}&postalcode=${postalcode}`)
+
+//         const markets = await newPromise.json()
+//         console.log(markets.services[1].markets)
+
+//         const otherPromise = await fetch(`${URL}company/categories?token=${result.token}&postalcode=${postalcode}&company_id=${companyID}`)
+
+//         const productsCategory = await otherPromise.json()
+//         console.log(productsCategory.categories)
+
+//         const otherPromise2 = await fetch(`${URL}company/items?token=${result.token}&postalcode=${postalcode}&company_id=${companyID}&category_id=${categoryID}`)
+
+//         const products = await otherPromise2.json()
+//         console.log(products.items)
+
+//     }
+//     catch (err) {
+//         console.error(err)
+//     }
+// }
+
+// getDataFromApi()
+
+
+
+
+
+// //LLAMADA PARA OBTENER TOKEN VALIDO
+// export const getDataFromApi = () => {
+//     return fetch(
+//         `${URL}user/session`
+//     ).then((resp) => {
+//         return resp.json();
+//     });
+// }
+
+
+// // // //LLAMADA PARA ACCEDER A CODIGO POSTAL
+// export const getApiPostalcode = (token, postalcode) => {
+//     return fetch(`${URL}user/postalcode?token=${token}&postalcode=${postalcode}`
+//     ).then((response) => {
+//         return response.json()
+//     }
+//     )
+//     //LO COMENTO PARA PODER TERMINAR LA LLAMADA EN APP CON HOOK USEEFFECT
+//     // .then(data => {
+//     //     console.log(data)
+//     //     return data
+//     // }
+//     // )
+
+// }
 
 
 
