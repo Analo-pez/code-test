@@ -14,34 +14,23 @@ import Shop from './sections/Shop';
 import Collapsible from './sections/Collapsible';
 import Product from './sections/Product';
 import Landing from './Landing';
+import { getApiData, getDataFromApi } from '../services/Api'
+import ProductList from './sections/ProductList';
 
-
-function App() {
+function App(props) {
   // const [error, setError] = useState(null);
   // const [isLoaded, setIsLoaded] = useState(false);
   // const [products, setProducts] = useState([]);
+  const [categories, setCategories] = useState([]);
 
-  // useEffect(() => {
-  //   fetch('http://api.comprea.com/')
-  //     .then(response => response.json())
-  //     .then(
-  //       (data) => {
-  //         console.log(data);
-  //         setIsLoaded(true);
-  //         setProducts(data);
-  //       },
-  //       (error) => {
-  //         setIsLoaded(true);
-  //         setError(error);
-  //       }
-  //     )
-  // }, [])
+  useEffect(
+    () => {
+      getDataFromApi().then(data => {
+        setCategories(data.categories);
+      });
+    }, []);
 
-  // if (error) {
-  //   return <div>Error: {error.message}</div>;
-  // } else if (!isLoaded) {
-  //   return <div>Loading...</div>;
-  // } else {
+  console.log(categories)
 
   return (
     <Router>
