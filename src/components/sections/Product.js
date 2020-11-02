@@ -9,12 +9,12 @@ const Product = (props) => {
 
     return (
         <>
-            <Link to={`/character/${props.productId}`}>
+            <Link to={`/tienda/mercadona/${props.categoryTitle}/${props.productTitle}/${props.productId}`}>
                 <li className="accordion-content"
                     onClick={() => setSelected(!isSelected)} >
-                    <a href="#">
+                    <p >
                         {props.productTitle}
-                    </a>
+                    </p>
                     <img className={`accordion-content--icon
             ${isSelected ? "" : "hidden"}`}
                         src={stick} alt="checked"></img>

@@ -5,13 +5,14 @@ import {
   Route,
 } from "react-router-dom";
 import '../stylesheets/App.scss';
-import NavBar from '../components/sections/NavBar'
 import imgSuper from '../assets/ic_circled_super.png';
 import Shop from './sections/Shop';
 import Collapsible from './sections/Collapsible';
 import Product from './sections/Product';
+import HeaderNav from './sections/HeaderNav';
 import Landing from './Landing';
 import { getCategories, getDataProducts, getMarketData } from '../services/Api'
+import CategoriesList from './sections/CategoriesList';
 
 
 function App(props) {
@@ -32,53 +33,43 @@ function App(props) {
       })
     }, []);
 
-  // console.log(markets, categories, products)
+  console.log(categories, products)
 
-  const renderProduct = products.map((product, index) => {
-    return <Product
-      key={index}
-      productId={product.uuid}
-      productTitle={product.name}
-    />
-  })
+  // const renderProduct = products.map((product, index) => {
+  //   if (product) {
+  //     return <Product
+  //       key={index}
+  //       productId={product.uuid}
+  //       productTitle={product.name}
+  //     />
+  //   }
+  // })
+  // const renderProduct = () => {
+  //   for (const subcategory of subcategories) {
+  //     return <Product
+  //       productId={subcategory.uuid}
+  //       productTitle={subcategory.name} />
+  //   }
+  // }
 
-
-  const renderCategory = categories.map((cat, index) => {
-    return <Collapsible
-      key={index}
-      iconCategory={categories.icon}
-      categoryTitle={categories.name}
-    />
-  })
-  console.log(renderCategory)
 
   return (
     <Router>
-      <div >
+      <div>
         <Switch>
           <Route exact path="/" component={Landing} />
           <Route exact path="/tienda" component={Shop} />
-          <Route exact path="/tienda/market">
-            <NavBar
-              logoMarket={markets.picture}
-              name={markets.name}
-              postalcode="28010"
-
-              categoryTitle="Higiene"
-              iconCategory={imgSuper}
-              productTitle="Maquinillas"
-              productId="2"
-
-            // categoryTitle={categories.name}
-            // iconCategory={categories.icon}
-            // productTitle={products.name}
-            // productId={products.uuid}
-            // render={renderProduct}
-            />
-
+          <Route path="/tienda/mercadona">
+            <nav className="navBar">
+              <HeaderNav
+                logoMarket={markets.picture}
+                name={markets.name}
+                postalcode="Madrid"
+              />
+              <CategoriesList
+                categories={categories} />
+            </nav>
           </Route>
-          {/* <Route exact path="/tienda/market/category" component={NavBar} /> */}
-          <Route exact path="/tienda/market/category/subcategory" component={NavBar} />
         </Switch>
       </div>
     </Router>

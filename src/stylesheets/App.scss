@@ -23,18 +23,18 @@ html{
   position: relative;
   z-index: 999;
   @media all and (min-width: 768px) {
-    width: 40%; 
+    width: 45%; 
     padding-top: 60px;
 }
 @media all and (min-width: 1200px) {
-    width: 25%; 
+    width: 30%; 
 }
   
   &__header{
     width: 100%;
     color: $color-ligth;
     background-color:$color-market;
-    padding: 40px;
+    padding: 30px;
     display: flex;
     align-items: center;
     position: fixed;
@@ -42,18 +42,26 @@ html{
     left: 0;
     top: 0;
     @media all and (min-width: 768px) {
-      width: 40%; 
+      width: 45%; 
       padding: 12px;
   }
   @media all and (min-width: 1200px) {
-      width: 25%; 
+      width: 30%; 
       padding: 15px;
   }
     &--img{
-      width: 24px;
-      height: 24px;
+      width: 40x;
+      height: 40px;
       align-self: center;
-      margin-right: 2px;  
+      margin-right: 10px;  
+      @media all and (min-width: 768px) {
+        width: 30px;
+        height: 30px;
+    }
+    // @media all and (min-width: 1200px) {
+    //     width: 25%; 
+    //     padding: 15px;
+    // }
     }
     &--change{
       font-size: 14px;

@@ -17,7 +17,7 @@ const Collapsible = (props) => {
                     src={props.iconCategory}
                     alt={props.categoryTitle} />
                 {/* <i className="far fa-star collapsible__icon"></i> */}
-                <Link to="/tienda/market" className="collapsible__box">
+                <Link to={`/tienda/mercadona/${props.categoryTitle}`} className="collapsible__box">
                     <h2 className="collapsible__box--title">
                         {props.categoryTitle}
                     </h2>
@@ -31,16 +31,16 @@ const Collapsible = (props) => {
             <div id="upperElement" className={`accordion-item ${!isOpen ? "collapsed" : ""}`} >
                 <ul className="container">
                     <li className="accordion-content">
-                        <a href="#upperElement" > Ver toda la sección</a >
+                        <a href={`/tienda/mercadona/${props.categoryTitle}`} > Ver toda la sección</a >
                         <img
                             className={`accordion-content--icon 
                             ${props.isSelected ? "" : "hidden"}`}
                             src={stick} alt="checked"></img>
                     </li>
-                    <Product
-                        productTitle={props.productTitle}
-                        productId={props.productId}
-                    />
+                    {/* <li>
+                        {productList}
+                    </li> */}
+
                 </ul>
             </div>
         </>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from "react-router-dom";
 import '../../stylesheets/styleComponents/Shop.scss';
 import mercadona from '../../assets/mercadona.jpg'
@@ -12,10 +12,10 @@ function Shop() {
             <h1 className="pageShop__title">
                 Resultados de la búsqueda
             </h1>
-            <img className="pageShop__img" src={mercadona}></img>
+            <img className="pageShop__img" src={mercadona} alt="mercadona"></img>
 
-            <Link to="/tienda/market" className="pageShop__button">
-                <button className="start-button">Empezar compra</button>
+            <Link to="/tienda/mercadona" className="pageShop__button">
+                <button className="start-button" >Empezar compra</button>
             </Link >
 
         </div>
