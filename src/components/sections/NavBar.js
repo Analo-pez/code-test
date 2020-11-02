@@ -1,5 +1,5 @@
 import React from 'react'
-import ProductList from './ProductList';
+import Collapsible from './Collapsible';
 import { Link } from "react-router-dom";
 
 
@@ -18,7 +18,12 @@ const NavBar = (props) => {
                     <p className="navBar__header--change">cambiar</p>
                 </Link>
             </div>
-            <ProductList />
+            <Collapsible
+                categoryTitle={props.categoryTitle}
+                iconCategory={props.iconCategory}
+                productTitle={props.productTitle}
+                productId={props.productId}
+            />
         </nav>
     )
 }

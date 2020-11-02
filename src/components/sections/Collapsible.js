@@ -13,11 +13,13 @@ const Collapsible = (props) => {
         <>
             <div className="collapsible"
                 onClick={() => setOpen(!isOpen)}>
-                {/* <img src={props.iconCategory} alt={props.title} /> */}
-                <i className="far fa-star collapsible__icon"></i>
-                <Link to="/tienda/market/category" className="collapsible__box">
+                <img className="collapsible__icon"
+                    src={props.iconCategory}
+                    alt={props.categoryTitle} />
+                {/* <i className="far fa-star collapsible__icon"></i> */}
+                <Link to="/tienda/market" className="collapsible__box">
                     <h2 className="collapsible__box--title">
-                        {props.title}
+                        {props.categoryTitle}
                     </h2>
                     <img
                         className={`collapsible__box--icon  ${!isOpen ? "rotate" : ""}`}
@@ -31,19 +33,13 @@ const Collapsible = (props) => {
                     <li className="accordion-content">
                         <a href="#upperElement" > Ver toda la sección</a >
                         <img
-                            // className="accordion-content--icon"
                             className={`accordion-content--icon 
                             ${props.isSelected ? "" : "hidden"}`}
                             src={stick} alt="checked"></img>
                     </li>
                     <Product
-                        title="Subcategoría"
-                    />
-                    <Product
-                        title="Subcategoría"
-                    />
-                    <Product
-                        title="Subcategoría"
+                        productTitle={props.productTitle}
+                        productId={props.productId}
                     />
                 </ul>
             </div>

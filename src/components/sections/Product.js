@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import '../../stylesheets/styleComponents/Product.scss';
 import stick from '../../assets/ic_checked.svg';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    useParams,
-    NavLink
-} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 const Product = (props) => {
@@ -16,11 +9,11 @@ const Product = (props) => {
 
     return (
         <>
-            <Link to="/tienda/market/category/subcategory">
+            <Link to={`/character/${props.productId}`}>
                 <li className="accordion-content"
                     onClick={() => setSelected(!isSelected)} >
                     <a href="#">
-                        {props.title}
+                        {props.productTitle}
                     </a>
                     <img className={`accordion-content--icon
             ${isSelected ? "" : "hidden"}`}
