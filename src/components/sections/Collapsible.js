@@ -18,7 +18,7 @@ const Collapsible = (props) => {
                 <div className="collapsible__box"
                 >
                     <h2 className="collapsible__box--title">
-                        {props.title}
+                        {props.categoryTitle}
                     </h2>
                     <img
                         className={`collapsible__box--icon  ${!isOpen ? "rotate" : ""}`}
@@ -38,7 +38,7 @@ const Collapsible = (props) => {
                             src={stick} alt="checked"></img>
                     </li>
                     <Product
-                        title="Subcategoría"
+                        title={props.productTitle}
                     />
                     <Product
                         title="Subcategoría"

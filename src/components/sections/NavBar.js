@@ -1,6 +1,7 @@
 import React from 'react'
+import Collapsible from './Collapsible';
 import ProductList from './ProductList';
-// import { getDataFromApi } from '../../services/Api'
+
 
 const NavBar = (props) => {
     return (
@@ -13,7 +14,9 @@ const NavBar = (props) => {
                 </div>
                 <p className="navBar__header--change">cambiar</p>
             </div>
-            <ProductList />
+            {/* <Collapsible
+                title={props.categoryTitle}
+                productTitle={props.productTitle} /> */}
         </nav>
     )
 }

@@ -1,23 +1,23 @@
-import React from 'react';
-import Collapsible from './Collapsible';
-import '../../stylesheets/styleComponents/ProductList.scss'
+// import React from 'react';
+// import Collapsible from './Collapsible';
+// import '../../stylesheets/styleComponents/ProductList.scss'
 
 
 
-const ProductList = (props) => {
+// const ProductList = (props) => {
 
 
-    return (
-        <div className="productList">
-            <Collapsible
-                title="Frutas y verduras"
-            // iconCategory="../../assets/ic_checked.svg" 
-            />
-            <Collapsible title="Carne" />
-            <Collapsible title="Pescado" />
-            <Collapsible title="Hogar" />
-        </div>
-    );
-}
+//     const htmlCode = props.categories.map((category, index) => {
+//         return < Collapsible
+//             key={index}
+//             categoryTitle={category.shortcut}
+//         />
+//     })
+//     return (
+//         <div className="productList">
+//             {htmlCode}
+//         </div>
+//     );
+// }
 
-export default ProductList;
+// export default ProductList;

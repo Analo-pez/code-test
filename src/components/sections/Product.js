@@ -7,11 +7,10 @@ const Product = (props) => {
     const [isSelected, setSelected] = useState(false);
 
     return (
-
         <li className="accordion-content"
             onClick={() => setSelected(!isSelected)} >
             <a href="#upperElement">
-                {props.title}
+                {props.productTitle}
             </a>
             <img className={`accordion-content--icon
             ${isSelected ? "" : "hidden"}`}
