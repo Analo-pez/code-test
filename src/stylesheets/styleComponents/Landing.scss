@@ -3,10 +3,10 @@
 .pageLanding{
     background-color: white;
     height: 100vh;
+    
 }
 
 .headerLanding{
-    padding: 10%px;
     text-align: center;
     border: 10px solid $color-pressed;
     width: 100vw;
@@ -19,14 +19,12 @@
     }
 
 .sectionPrincipal{
-    // @media all and (min-width: 1200px) {
-        // background-position-x: right;
-
-    // }
-
     @media all and (min-width: 768px) {
     background-image: url('../../assets/user.jpg');
     background-position: center;
+    background-repeat: no-repeat;
+    background-position-y: top;
+    height: 100vh;
     display: flex;
     justify-content: flex-end;
 
@@ -37,21 +35,21 @@
     &__box{
         display: flex;
         flex-direction: column;
-        height: 100vh;
+        // height: 100vh;
         padding: 15%;
         @media all and (min-width: 768px) {
         padding: 5%;
         background-color: $color-ligth;
         opacity: 80%;
         align-items: flex-end;
-        width: 40%;
+        width: 50%;
         }
         
         &--title{
             font-size: 30px;
             padding: 15px;
             text-align: center;
-            @media all and (min-width: 1300px) {
+            @media all and (min-width: 1200px) {
                 font-size: 50px;
                 padding: 15px;
             }
@@ -67,7 +65,7 @@
             @media all and (min-width: 768px) {
                 font-size: 25px;  
             }
-            @media all and (min-width: 1300px) {
+            @media all and (min-width: 1200px) {
                 margin-top: 50px; 
             }
             &::placeholder{
@@ -80,7 +78,7 @@
 
 
 
-    
+//Hacer StyledComponent
     .start-button {
         color: $color-dark;
         background-color: $color-pressed;

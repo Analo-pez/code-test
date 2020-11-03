@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 const Collapsible = (props) => {
     const [isOpen, setOpen] = useState(false);
 
+
     return (
         <>
             <div className="collapsible"
@@ -16,7 +17,6 @@ const Collapsible = (props) => {
                 <img className="collapsible__icon"
                     src={props.iconCategory}
                     alt={props.categoryTitle} />
-                {/* <i className="far fa-star collapsible__icon"></i> */}
                 <Link to={`/tienda/mercadona/${props.categoryTitle}`} className="collapsible__box">
                     <h2 className="collapsible__box--title">
                         {props.categoryTitle}
@@ -37,10 +37,7 @@ const Collapsible = (props) => {
                             ${props.isSelected ? "" : "hidden"}`}
                             src={stick} alt="checked"></img>
                     </li>
-                    {/* <li>
-                        {productList}
-                    </li> */}
-
+                    {props.content}
                 </ul>
             </div>
         </>

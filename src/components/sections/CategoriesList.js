@@ -5,7 +5,7 @@ import Collapsible from './Collapsible';
 const CategoriesList = props => {
     const items = props.categories.map((category) => {
         return (
-            <li key={category.id} className="App-card">
+            <li>
                 <Collapsible
                     key={category.id}
                     iconCategory={category.icon}
@@ -14,7 +14,7 @@ const CategoriesList = props => {
     });
 
 
-    return <ul className="App-List">{items}</ul>;
+    return <ul>{items}</ul>;
 };
 
 export default CategoriesList;

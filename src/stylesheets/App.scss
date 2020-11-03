@@ -14,6 +14,11 @@ html{
   opacity: 99%;
 }
 
+.pageBkg{
+  width: 100vw;
+  height: 100vh;
+}
+
 .navBar {
   background-color: $color-medium;
   width: 100%;
@@ -23,8 +28,11 @@ html{
   position: relative;
   z-index: 999;
   @media all and (min-width: 768px) {
-    width: 45%; 
-    padding-top: 60px;
+    width: 50%; 
+    padding-top: 70px;
+}
+@media all and (min-width: 1000px) {
+  width: 40%; 
 }
 @media all and (min-width: 1200px) {
     width: 30%; 
@@ -42,7 +50,11 @@ html{
     left: 0;
     top: 0;
     @media all and (min-width: 768px) {
-      width: 45%; 
+      width: 50%; 
+      padding: 12px;
+  }
+    @media all and (min-width: 1000px) {
+      width: 40%; 
       padding: 12px;
   }
   @media all and (min-width: 1200px) {
@@ -58,10 +70,6 @@ html{
         width: 30px;
         height: 30px;
     }
-    // @media all and (min-width: 1200px) {
-    //     width: 25%; 
-    //     padding: 15px;
-    // }
     }
     &--change{
       font-size: 14px;
