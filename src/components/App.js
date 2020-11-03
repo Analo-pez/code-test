@@ -9,7 +9,6 @@ import Shop from './sections/Shop';
 import HeaderNav from './sections/HeaderNav';
 import Landing from './Landing';
 import { getCategories, getDataProducts, getMarketData } from '../services/Api'
-import CategoriesList from './sections/CategoriesList';
 import Loader from '../components/complements/Loader';
 import SubcategoriesList from './sections/SubcategoriesList';
 
@@ -38,7 +37,6 @@ function App(props) {
       })
     }, []);
 
-  console.log(markets)
 
   if (isLoading) return <Loader />;
 

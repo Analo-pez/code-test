@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import '../../stylesheets/styleComponents/Collapsible.scss'
 import hide from '../../assets/ic_hide.svg';
 import stick from '../../assets/ic_checked.svg';
-import Product from './Product';
 import { Link } from "react-router-dom";
 
 
