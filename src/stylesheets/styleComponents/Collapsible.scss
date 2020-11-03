@@ -3,6 +3,7 @@
 .collapsible{
     height: 56px;
     display: flex;
+    // margin-top: 200px;
     &:hover{
         cursor: pointer;
         background-color: $color-hover;
@@ -12,7 +13,7 @@
     }
      
     &__icon{
-    font-size: 19px;
+    width: 40px;
     color:$color-pressed;
     align-self: center;
     margin: 15px;

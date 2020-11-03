@@ -1,66 +1,69 @@
 import React, { useState, useEffect } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import '../stylesheets/App.scss';
-import NavBar from '../components/sections/NavBar'
-import Collapsible from '../components/sections/Collapsible'
-import imgSuper from '../assets/ic_circled_super.png';
+import Shop from './sections/Shop';
+import HeaderNav from './sections/HeaderNav';
+import Landing from './Landing';
 import { getCategories, getDataProducts, getMarketData } from '../services/Api'
-import ProductList from './sections/ProductList';
+import CategoriesList from './sections/CategoriesList';
+import Loader from '../components/complements/Loader';
+import SubcategoriesList from './sections/SubcategoriesList';
+
 
 
 function App(props) {
+  const [isLoading, setIsLoading] = useState(false);
   const [markets, setMarkets] = useState([]);
   const [categories, setCategories] = useState([]);
   const [products, setProducts] = useState([]);
 
   useEffect(
     () => {
+      setIsLoading(true);
       getMarketData().then(data => {
-        setMarkets(data.services[1].markets[2])
+        setMarkets(data.services[1].markets[2]);
+        setIsLoading(false);
       })
       getCategories().then(data => {
         setCategories(data.categories);
+        setIsLoading(false);
       });
       getDataProducts().then(data => {
-        setProducts(data.items)
+        setProducts(data.items);
+        setIsLoading(false);
       })
     }, []);
 
-  console.log(markets, categories, products)
+  console.log(markets)
 
-  // const renderCategories = props => {
-  //   const category = categories.map((cat, index) => {
-  //     return <Collapsible
-  //       key={index}
-  //       categoryTitle={cat.name}
-  //       iconCategory={cat.icon}
-  //     />
-
-  //   })
-  // }
-
-
-
-
+  if (isLoading) return <Loader />;
 
   return (
-    <div >
-      <Switch>
-        <Route exact path="/tienda/">
-          <NavBar
-            logoMarket={markets.picture}
-            name={markets.name}
-            postalcode="28010"
-          />
-        </Route>
-        <Route exact path="/tienda/categories/" >
-          <Collapsible
-            categoryTitle={categories.name} />
-        </Route>
-        {/* <Route exact path="/tienda/categories/example"
-          render={renderCategories} /> */}
-      </Switch>
-    </div >
+    <Router>
+      <div>
+        <Switch>
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/tienda" component={Shop} />
+          <Route path="/tienda/mercadona">
+            {/* <img className="pageBkg" src={markets.logotype_background} /> */}
+            <nav className="navBar">
+              <HeaderNav
+                logoMarket={markets.picture}
+                name={markets.name}
+                postalcode="Madrid"
+              />
+              <SubcategoriesList
+                categories={categories}
+                products={products} />
+            </nav>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
 

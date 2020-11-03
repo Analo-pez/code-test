@@ -1,7 +1,7 @@
 const URL = 'https://api.comprea.com/v7/';
 const postalcode = "28010"
 const companyID = "1"
-const categoryID = "99673"
+const categoryID = "99658"
 
 
 export function getMarketData(json) {
@@ -41,10 +41,5 @@ export function getDataProducts(json) {
             return resp.json()
         })
 }
-
-
-
-
-
 
 
