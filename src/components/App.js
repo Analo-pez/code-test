@@ -45,7 +45,7 @@ function App(props) {
       <div>
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route exact="/tienda" component={Shop} />
+          <Route exact path="/tienda" component={Shop} />
           <Route path="/tienda/mercadona">
             {/* <img className="pageBkg" src={markets.logotype_background} /> */}
             <nav className="navBar">
