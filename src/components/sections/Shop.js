@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { StyledButton } from "../Landing";
 import '../../stylesheets/styleComponents/Shop.scss';
 import mercadona from '../../assets/mercadona.jpg'
 
@@ -15,7 +16,7 @@ function Shop() {
             <img className="pageShop__img" src={mercadona} alt="mercadona"></img>
 
             <Link to="/tienda/mercadona" className="pageShop__button">
-                <button className="start-button" >Empezar compra</button>
+                <StyledButton className="start-button" >Empezar compra</StyledButton>
             </Link >
 
         </div>

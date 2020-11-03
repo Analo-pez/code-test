@@ -1,7 +1,23 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/styleComponents/Landing.scss';
-// import user from "../images/user.jpg";
+import styled from 'styled-components'
+
+
+export const StyledButton = styled.button`
+    color: rgba(0,0,0,0.75);;
+    background-color: #4FD053;
+    outline-style: none;
+    padding: 20px;
+    font-size: 20px;
+    margin-top: 30px;
+    &:hover{
+        cursor: pointer;
+        color: white;
+        font-size: 30px;
+        border-color: transparent;
+}`
+
 
 function Landing(props) {
     const [postalcode, setPostalcode] = useState(localStorage.getItem('postalcode') || '');
@@ -29,8 +45,8 @@ function Landing(props) {
                         value={props.value}
                         type="number" />
                     <Link to="/tienda" className="box-button" >
-                        <button className="start-button"
-                            onClick={isSubmitButtonDisabled}>Buscar tienda</button>
+                        <StyledButton className="start-button"
+                            onClick={isSubmitButtonDisabled}>Buscar tienda</StyledButton>
                     </Link >
                 </section>
 

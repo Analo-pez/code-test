@@ -3,3 +3,8 @@
 .hidden{
     display: none;
 }
+
+.accordion-content{
+    color: $color-navProduct;
+    border-bottom: 1px solid $color-navProduct;
+}

@@ -12,11 +12,8 @@ const NavBar = (props) => {
                     <h3 className="navBar__header--box--title">{props.name}</h3>
                     <p className="navBar__header--box--text">Comprando en {props.postalcode}</p>
                 </div>
-                <p className="navBar__header--change">cambiar</p>
+                <span className="navBar__header--change">cambiar</span>
             </div>
-            {/* <Collapsible
-                title={props.categoryTitle}
-                productTitle={props.productTitle} /> */}
         </nav>
     )
 }

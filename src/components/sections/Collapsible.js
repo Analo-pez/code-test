@@ -30,7 +30,7 @@ const Collapsible = (props) => {
             <div id="upperElement" className={`accordion-item ${!isOpen ? "collapsed" : ""}`} >
                 <ul className="container">
                     <li className="accordion-content">
-                        <a href={`/tienda/mercadona/${props.categoryTitle}`} > Ver toda la sección</a >
+                        <a className="container__title" href={`/tienda/mercadona/${props.categoryTitle}`} > Ver toda la sección</a >
                         <img
                             className={`accordion-content--icon 
                             ${props.isSelected ? "" : "hidden"}`}

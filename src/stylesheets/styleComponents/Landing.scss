@@ -35,7 +35,6 @@
     &__box{
         display: flex;
         flex-direction: column;
-        // height: 100vh;
         padding: 15%;
         @media all and (min-width: 768px) {
         padding: 5%;
@@ -43,6 +42,9 @@
         opacity: 80%;
         align-items: flex-end;
         width: 50%;
+        }
+        @media all and (min-width: 1000px) {
+        width: 40%;
         }
         
         &--title{
@@ -77,23 +79,5 @@
 }
 
 
-
-//Hacer StyledComponent
-    .start-button {
-        color: $color-dark;
-        background-color: $color-pressed;
-        outline-style: none;
-        padding: 20px;
-        font-size: 20px;
-        margin-top: 30px;
-        &:hover{
-            cursor: pointer;
-            color: $color-ligth;
-            font-size: 30px;
-            border-color: transparent;
-        }
-    }
-    
-    
      
       
