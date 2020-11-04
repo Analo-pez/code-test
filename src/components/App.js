@@ -1,9 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import '../stylesheets/App.scss';
 import Shop from './sections/Shop';
 import HeaderNav from './sections/HeaderNav';
@@ -41,27 +37,26 @@ function App(props) {
   if (isLoading) return <Loader />;
 
   return (
-    <Router>
-      <div>
-        <Switch>
-          <Route exact path="/" component={Landing} />
-          <Route exact path="/tienda" component={Shop} />
-          <Route path="/tienda/mercadona">
-            {/* <img className="pageBkg" src={markets.logotype_background} /> */}
-            <nav className="navBar">
-              <HeaderNav
-                logoMarket={markets.picture}
-                name={markets.name}
-                postalcode="Madrid"
-              />
-              <SubcategoriesList
-                categories={categories}
-                products={products} />
-            </nav>
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/tienda" component={Shop} />
+        <Route path="/tienda/mercadona">
+          {/* <img className="pageBkg" src={markets.logotype_background} /> */}
+          <nav className="navBar">
+            <HeaderNav
+              logoMarket={markets.picture}
+              name={markets.name}
+              postalcode="Madrid"
+            />
+            <SubcategoriesList
+              categories={categories}
+              products={products} />
+          </nav>
+        </Route>
+      </Switch>
+    </>
+
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 
 const HeaderNav = (props) => {
@@ -18,5 +19,13 @@ const HeaderNav = (props) => {
         </div>
     )
 }
+
+HeaderNav.propTypes = {
+    logoMarket: PropTypes.string,
+    name: PropTypes.string,
+    postalcode: PropTypes.string,
+};
+
+
 
 export default HeaderNav;

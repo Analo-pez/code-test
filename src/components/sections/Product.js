@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../stylesheets/styleComponents/Product.scss';
 import stick from '../../assets/ic_checked.svg';
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 
 const Product = (props) => {
@@ -23,5 +24,12 @@ const Product = (props) => {
         </>
     );
 }
+
+
+Product.propTypes = {
+    categoryTitle: PropTypes.string,
+    productTitle: PropTypes.string,
+    productId: PropTypes.string,
+};
 
 export default Product;

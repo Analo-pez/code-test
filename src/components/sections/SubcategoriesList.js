@@ -1,6 +1,7 @@
 import React from 'react';
 import Product from './Product';
 import Collapsible from './Collapsible';
+import PropTypes from "prop-types";
 
 
 const SubcategoriesList = props => {
@@ -26,6 +27,17 @@ const SubcategoriesList = props => {
 
 
     return <ul >{items}</ul>
+};
+
+SubcategoriesList.propTypes = {
+    products: PropTypes.arrayOf(PropTypes.object),
+    productTitle: PropTypes.string,
+    productId: PropTypes.string,
+    key: PropTypes.string,
+    categories: PropTypes.arrayOf(PropTypes.object),
+    iconCategory: PropTypes.string,
+    categoryTitle: PropTypes.string,
+    content: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default SubcategoriesList;

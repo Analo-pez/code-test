@@ -3,6 +3,7 @@ import '../../stylesheets/styleComponents/Collapsible.scss'
 import hide from '../../assets/ic_hide.svg';
 import stick from '../../assets/ic_checked.svg';
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 
 const Collapsible = (props) => {
@@ -42,5 +43,13 @@ const Collapsible = (props) => {
         </>
     );
 }
+
+Collapsible.propTypes = {
+    iconCategory: PropTypes.string,
+    categoryTitle: PropTypes.string,
+    content: PropTypes.arrayOf(PropTypes.object),
+};
+
+
 
 export default Collapsible;
